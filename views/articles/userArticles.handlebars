@@ -1,0 +1,17 @@
+{{#if data}}
+    {{#each data}}
+        <div class="card card-body mb-2">
+            <h3>Author: {{author}}</h3>
+            <hr />
+            <p class="text-secondary">Title: {{title}}</p>
+            <p class="lead">{{body}}</p>
+            <hr />
+            <a href="/articles/edit/{{_id}}" class="btn btn-primary mb-2">Edit</a>
+            <form method="POST" action="/articles/remove/{{_id}}?_method=DELETE">
+                <button type="submit" class="btn btn-danger btn-block">Remove</button>
+            </form>
+        </div>
+    {{/each}}
+{{else}}
+    <p>No articles</p>
+{{/if}}

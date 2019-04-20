@@ -1,0 +1,12 @@
+{{#if articles}}
+    {{#each articles}}
+        <div class="card card-body mb-2">
+            <h3>Author: {{author}}</h3>
+            <hr />
+            <p class="lead">Title: {{title}}</p>
+            <p class="text-secondary">{{body}}</p>
+        </div>
+    {{/each}}
+{{else}}
+    <p>No articles</p>
+{{/if}}

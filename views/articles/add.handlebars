@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-md-10 add-area mx-auto">
+
+        <div class="feedback"></div>
+
+        {{#if err}}
+        <p class="alert alert-danger">{{err.errors.author.message}}</p>
+        <p class="alert alert-danger">{{err.errors.title.message}}</p>
+        <p class="alert alert-danger">{{err.errors.body.message}}</p>
+        {{/if}}
+
+        <form action="/articles/add" method="POST" onsubmit="return validateArticle()">
+
+            <input type="hidden" id="author" value="{{user.firstName}} {{user.lastName}}" name="author">
+
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title...">
+        </div>
+
+        <div class="form-group">
+            <textarea cols="30" rows="10" class="form-control" id="body" name="body" placeholder="Write Your Article..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </form>
+    </div>
+</div>
